@@ -9,8 +9,8 @@ import { map, takeUntil, tap } from "rxjs/operators";
 export class SpotifyService {
 
   public artistas: any;
-  public urlSpotify: string = 'https://api.spotify.com/v1/';
-  token: string = 'BQCr-bWlQcJI9t9HTGO0PjvdL9EAv6dOEqsxkzlJcuq5-xKtbFYkwWpvO2dX9f7Q8KEnfVJuAPy37vm9hjA';
+  public urlBaseSpotify: string = 'https://api.spotify.com/v1/';
+  token: string = 'BQDJolGw_0zKq7Mnq6vjeyMnelQuixF6wXm0LFcWDytGgGuruwmyvY815DUmcwweo7QdMSQN7S1obyFqjlI';
 
   constructor(public http: HttpClient) {
 
@@ -25,15 +25,22 @@ export class SpotifyService {
     return headers;
   }
 
+  getTop(id:string) {
+    let url = `${this.urlBaseSpotify}artists/${id}/top-tracks?country=ES`;
+    let headers = this.getHeaders();
+
+    return this.http.get(url, { headers });
+  }
+
   getArtist(id: string) {
-    let url = `${this.urlSpotify}artists/${id}`;
+    let url = `${this.urlBaseSpotify}artists/${id}`;
     let headers = this.getHeaders();
 
     return this.http.get(url, { headers });
   }
 
   getArtistas(query: string) {
-    let url = `${this.urlSpotify}search?query=${query}&type=artist&offset=0&limit=20`;
+    let url = `${this.urlBaseSpotify}search?query=${query}&type=artist&offset=0&limit=20`;
     let headers = this.getHeaders();
 
     return this.http.get(url, { headers }).pipe(
