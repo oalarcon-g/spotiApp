@@ -10,7 +10,7 @@ export class SpotifyService {
 
   public artistas: any;
   public urlBaseSpotify: string = 'https://api.spotify.com/v1/';
-  token: string = 'BQDJolGw_0zKq7Mnq6vjeyMnelQuixF6wXm0LFcWDytGgGuruwmyvY815DUmcwweo7QdMSQN7S1obyFqjlI';
+  token: string = 'BQCi4aqnP7jkaNyzDyB6vqWbTLY2ofZGpq0VMkcQogqvnRoavSZpx5q54NNPieVxg4BKC_cjSPvHqIGGF9M';
 
   constructor(public http: HttpClient) {
 

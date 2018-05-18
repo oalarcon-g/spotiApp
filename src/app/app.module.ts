@@ -12,9 +12,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 //Routes
 import { APP_ROUTING } from "./app.routes";
 
+import { NophotoPipe } from './pipes/nophoto.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+
 //Services
 import { SpotifyService } from "./services/spotify.service";
-import { NophotoPipe } from './pipes/nophoto.pipe';
 import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
@@ -23,8 +25,9 @@ import { ArtistComponent } from './components/artist/artist.component';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
+    ArtistComponent,
     NophotoPipe,
-    ArtistComponent
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,
